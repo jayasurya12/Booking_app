@@ -50,7 +50,7 @@ const userUserLogin = async(req,res,next)=>{
             if(req.body.password){
                 const userData = await User.findOne({email:req.body.email});
                 if(!userData) return res.status(404).json("User not Found");
-                    const pass = await bcrypt.compare(req.body.password,userData.password);
+                    const pass = await bcrypt.compare(req.body.password[0],userData.password);
                 if(pass){
                     const token = jwt.sign({id:userData._id, isAdmin:userData.isAdmin}, process.env.SECRETE_KEY)
                     return res.cookie("access_token",token,{httpOnly:true}).status(200).json(userData);
