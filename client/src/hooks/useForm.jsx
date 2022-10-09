@@ -25,7 +25,7 @@ const UseForm = (validate) => {
         event.preventDefault();
         setErrors(validate(values));
         try {
-            const {data} =await axios.post('/auth/register',values);
+            const {data} =await axios.post('https://booking-appz.herokuapp.com/api/auth/register',values);
             toast.success(data.msg, {
                 position: "top-right",
                 autoClose: 5000,
