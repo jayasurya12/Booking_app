@@ -22,26 +22,6 @@ const Hotel = () => {
   const location = useLocation();
   const id = location.pathname.split('/')[2];
   const {data,error,loading}= useFetch(`/hotel/Id/${id}`);
-  const photos =[
-    {
-      src:"https://cdn1.goibibo.com/voy_ing/t_g/13afc4e8a99311e7a17e02755708f0b3.jpg"
-    },
-    {
-      src:"https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/http://www.cfmedia.vfmleonardo.com/imageRepo/7/0/108/881/243/Club_room_bathroom_O/Trident-Chennai-Room.jpg?tr=w-780%2Ch-437%2Cfo-auto"
-    },
-    {
-      src:"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/3e/1e/56/itc-one-room.jpg?w=1200&h=-1&s=1"
-    },
-    {
-      src:"https://exp.cdn-hotels.com/hotels/5000000/4950000/4942800/4942760/c30c7448_z.jpg?impolicy=fcrop&w=500&h=333&q=medium"
-    },
-    {
-      src:"https://m.lemontreehotels.com/getattachment/d9db21c6-0c22-42bc-ac3a-5f7e30073097/Superior-Room.aspx"
-    },
-    {
-      src:'https://media-cdn.tripadvisor.com/media/photo-m/1280/18/e9/9c/24/jp-suite-room.jpg'
-    }
-  ];
   const handleOpen =(index)=>{
     setSlideNumber(index);
     setOpen(true)

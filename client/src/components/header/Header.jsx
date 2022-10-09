@@ -48,7 +48,7 @@ const Header = ({type}) => {
             };
             if(destination.length>1){
                 
-                const data = await axios.get(`/hotel?city=${convention(destination)}`);
+                const data = await axios.get(`https://booking-appz.herokuapp.com/api/hotel?city=${convention(destination)}`);
                 if(data.status== 404){
                    return toast.error(data.response.data.msg, {
                     position: "top-left",
