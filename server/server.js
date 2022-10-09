@@ -17,6 +17,6 @@ app.get('/',(req,res)=>{
 //middlewares
 app.use('/',api);
 
-app.listen(5000,()=>{
+app.listen(process.env.PORT || 5000,()=>{
     console.log('server started');
 });
